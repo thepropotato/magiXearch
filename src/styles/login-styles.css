@@ -1,0 +1,210 @@
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+}
+
+#logo img {
+    width: 100%;
+}
+
+#login-container {
+    padding: 1rem;
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    gap: 1rem;
+    display: flex;
+}
+
+#login-wrapper {
+    width: 70%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #31511E, #F6FCDF);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#login-wrapper::before {
+    content: "";
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 400px;
+    opacity: 0.75;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+    z-index: 0;
+}
+
+#login-wrapper *:not(#error-message):not(#error-message *):not(#success-message):not(#success-message *):not(.material-symbols-outlined) {
+    font-family: baseneue, Arial, Helvetica, sans-serif;
+    z-index: 1;
+}
+
+#login-title {
+    font-family: thunder !important;
+    font-size: calc(90vw / 10);
+    display: flex;
+    color: #1A1A19;
+}
+
+#login-title span {
+    font-family: thunder !important;
+    color: #31511E;
+}
+
+#login-main {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: hidden;
+    overflow-x: visible;
+}
+
+#login, #signup, #forgot-password {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+#login-menu {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-menu p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+#open-login, #open-signup {
+    height: 1rem;
+    width: 1rem;
+    background: none;
+    position: relative;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    position: relative;
+}
+
+.text-input {
+    position: relative;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    background-color: #F6FCDF;
+}
+
+.label {
+    position: absolute;
+    transform: translate(0%, -50%);
+    top: 50%;
+    left: 1rem;
+    transition: all 0.15s ease-in-out;
+}
+
+.text-input:focus + .label,
+.text-input:not(:placeholder-shown) + .label {
+    transform: translate(-100%, -50%);
+    left: -1rem;
+}
+
+#login-button, #signup-button, #forgot-password-button {
+    padding: 1rem;
+    width: 100%;
+    border-radius: 0.75rem;
+}
+
+.link {
+    color: #1A1A19;
+    align-self: center;
+    margin-top: 1rem;
+    color: #1A1A19;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#go-back {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 1rem;
+    background-color: #1A1A19;
+    border-radius: 100rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F6FCDF;
+    transition: all 0.15s ease;
+    display: flex;
+    gap: 0.5rem;
+    text-transform: uppercase;
+}
+
+#go-back p {
+    overflow: hidden;
+    transition: all 0.15s ease;
+}
+
+#go-back:hover {
+    cursor: pointer;
+}
+
+@media (orientation:portrait) {
+    
+    #login-container {
+        flex-direction: column;
+    }
+
+    #logo {
+        height: 30%;
+        width: unset;
+    }
+
+    #login-wrapper {
+        width: calc(100% - 2rem);
+        height: 70%;
+        flex-direction: column;
+    }
+
+    #logo img {
+        height: 100%;
+        width: unset;
+    }
+
+    #login-menu {
+        flex-direction: row;
+    }
+
+    #login-menu p {
+        writing-mode: horizontal-tb;
+        transform: rotate(0deg);
+    }
+
+    #login-title {
+        font-size: calc(90vh / 10);
+    }
+}

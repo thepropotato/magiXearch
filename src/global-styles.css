@@ -1,0 +1,162 @@
+@font-face {
+    font-family: 'thunder';
+    src: url('/src/fonts/thunder.otf');
+}
+
+@font-face {
+    font-family: 'baseneue';
+    src: url('/src/fonts/baseneue.ttf');
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'GRAD' 0,
+    'opsz' 24 !important;
+}
+
+.material-symbols-outlined.favorite {
+    color: rgb(200, 50, 70) !important;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+*::selection {
+    color: #1A1A19;
+    background-color: #859F3D;
+}
+
+body {
+    height: 100dvh;
+    width: 100dvw;
+    background-color: #1A1A19;
+    position: relative;
+}
+
+#main-container {
+    height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    overflow: hidden;
+}
+
+#body-container {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 3rem);
+    overflow: auto;
+    background: linear-gradient(135deg, #31511E, #F6FCDF);
+}
+
+#body-container::before {
+    content: "";
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 100px;
+    opacity: 0.75;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+    z-index: 0;
+}
+
+#body-container::-webkit-scrollbar{
+    width: 0.5rem;
+    background-color: #1A1A19;
+}
+
+#body-container::-webkit-scrollbar-thumb {
+    cursor: pointer !important;
+    background-color: #859f3d;
+}
+
+#body-container::-webkit-scrollbar-thumb:hover {
+    background-color: #859f3dd8;
+}
+
+input {
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: #1A1A19;
+}
+
+button {
+    border: none;
+    font-size: 1rem;
+    position: relative;
+    background: linear-gradient(to top, #1A1A19 50%, #859F3D 50%);
+    background-size: 100% 200%;
+    background-position: 0% 100%;
+    transition: all 0.15s ease-in-out;
+    color: #859F3D;
+    box-shadow: inset 0 0 0 0.05rem #1A1A19;
+    font-family: baseneue;
+}
+
+button:hover {
+    background-position: 100% 200%;
+    cursor: pointer;
+    color: #1A1A19;
+}
+
+a {
+    color: #1A1A19;
+    text-decoration: underline;
+}
+
+.container {
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    flex-shrink: 0;
+    background-color: transparent;
+}
+
+.title {
+    font-family: thunder;
+    color: #1A1A19;
+    font-size: calc(200dvw / 10);
+}
+
+.title span {
+    color: #31511E;
+}
+
+.title, .title span{
+    user-select: none;
+}
+
+@media (orientation:portrait) {
+    #body-container {
+        width: 100%;
+    }
+
+    .title {
+        font-size: calc(100dvh / 10);
+    }
+
+    #body-container::-webkit-scrollbar{
+        width: 0rem;
+        background-color: #1A1A19;
+    }
+    
+    #body-container::-webkit-scrollbar-thumb {
+        cursor: pointer !important;
+        background-color: #859f3d;
+    }
+    
+    #body-container::-webkit-scrollbar-thumb:hover {
+        background-color: #859f3dd8;
+    }
+}
+
+hr {
+    border-color: #859F3D;
+}

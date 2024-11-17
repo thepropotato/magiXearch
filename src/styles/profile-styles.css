@@ -1,0 +1,191 @@
+#profile-container {
+    position: relative;
+}
+
+#profile-main {
+    display: flex;
+    padding: 1rem;
+    flex: 1;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+#profile-main * {
+    font-family: baseneue, Arial, Helvetica, sans-serif;
+}
+
+.profile-heading {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 2rem;
+    width: fit-content;
+    position: relative;
+    color: #1A1A19 !important;
+    font-family: baseneue;
+}
+
+.profile-heading::before {
+    content: '';
+    position: absolute;
+    left: calc(100% + 1rem);
+    top: 50%;
+    transform: translate(0%, -50%);
+    height: 0.25rem;
+    background-color: #1A1A19 !important;
+    width: 100dvw;
+}
+
+#profile-container-wrapper {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+#profile-main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-self: center;
+    justify-content: center;
+    backdrop-filter: blur(1rem) brightness(0.5);
+    background: #1a1a1983;
+    padding: 1rem;
+    border-radius: 1rem;
+    flex: 1;
+    max-width: calc(35% - 2rem);
+}
+
+#primary-details {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-radius: 1rem;
+}
+
+#primary-details h1 {
+    font-weight: normal;
+    color: #f6fcdfa1;
+}
+
+#secondary-details {
+    height: 60%;
+    height: fit-content;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    color: #859F3D;
+    font-size: 1rem;
+}
+
+#profile-picture-wrapper {
+    aspect-ratio: 1/1;
+    width: 25%;
+    border-radius: 50%;
+}
+
+.profile-picture {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-attribute {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-attribute > p:nth-child(2) {
+    color: #f6fcdfa1;
+}
+
+#profile-buttons-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#profile-buttons-row button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+#profile-buttons-row button {
+    color: rgb(255, 40, 40);
+    border: none;
+    background: linear-gradient(to top, #1A1A19 50%, rgb(255, 40, 40) 50%);
+    background-size: 100% 200%;
+    background-position: 0% 100%;
+}
+
+#profile-buttons-row button:hover {
+    background-position: 100% 200%;
+    color: #1A1A19;
+}
+
+#profile-container #delete-confirmation-wrapper {
+    backdrop-filter: blur(1rem) brightness(0.5);
+    background: #1a1a1983;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0rem !important;
+}
+
+#profile-container #delete-confirmation {
+    padding: 1rem;
+    background-color: #1A1A19;
+    border: 0.015rem solid rgb(255, 40, 40);
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(255, 40, 40);
+    font-family: baseneue;
+}
+
+@media (orientation : portrait) {
+    #profile-main-container {
+        max-width: 100%;
+        gap: 1.5rem;
+    }
+
+    #primary-details h1{
+        font-size: 1.5rem;
+    }
+    
+    .profile-attribute {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #secondary-details {
+        justify-content: center;
+        align-items: center;
+    }
+
+    #profile-picture-wrapper {
+        width: 40%;
+    }
+    
+    #profile-container #delete-confirmation {
+        width: 70%;
+    }
+}
