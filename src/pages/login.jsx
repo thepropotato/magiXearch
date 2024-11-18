@@ -48,7 +48,7 @@ function LoadLogin( { onLoginSuccess } ) {
 
         setIsLoading(true);
 
-        fetch('http://magixearch.pythonanywhere.com/login', {
+        fetch('https://magixearch.pythonanywhere.com/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -92,7 +92,7 @@ function LoadLogin( { onLoginSuccess } ) {
         localStorage.setItem('signup-data', JSON.stringify(data));
         setIsLoading(true);
 
-        fetch('http://magixearch.pythonanywhere.com/verify', {
+        fetch('https://magixearch.pythonanywhere.com/verify', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -127,7 +127,7 @@ function LoadLogin( { onLoginSuccess } ) {
             const parsedData = JSON.parse(data);
             const { email, password, username } = parsedData;
 
-            fetch('http://magixearch.pythonanywhere.com/signup', {
+            fetch('https://magixearch.pythonanywhere.com/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -176,7 +176,7 @@ function LoadLogin( { onLoginSuccess } ) {
         localStorage.setItem('forgot-password-email', email);
         setIsLoading(true);
 
-        fetch('http://magixearch.pythonanywhere.com/verify', {
+        fetch('https://magixearch.pythonanywhere.com/verify', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -232,7 +232,7 @@ function LoadLogin( { onLoginSuccess } ) {
 
         const email = localStorage.getItem('forgot-password-email');
 
-        fetch('http://magixearch.pythonanywhere.com/change-password', {
+        fetch('https://magixearch.pythonanywhere.com/change-password', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -79,7 +79,7 @@ function LoadHome() {
     // GENERATE THE DESCRIPTION OF THE IMAGE
     const generateDescription = (formData) => {
         setIsLoading(true);
-        fetch('http://magixearch.pythonanywhere.com/generate-description', {
+        fetch('https://magixearch.pythonanywhere.com/generate-description', {
             method: 'POST',
             body: formData, // Send the FormData object which contains the file
         })
@@ -119,7 +119,7 @@ function LoadHome() {
     
             try {
                 setIsLoading(true);
-                const response = await fetch('http://magixearch.pythonanywhere.com/upload-image', {
+                const response = await fetch('https://magixearch.pythonanywhere.com/upload-image', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -168,7 +168,7 @@ function LoadHome() {
     const getImages = async () => {
         try {
             setIsLoading(true);
-            const response = await fetch('http://magixearch.pythonanywhere.com/fetch-images', {
+            const response = await fetch('https://magixearch.pythonanywhere.com/fetch-images', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -202,7 +202,7 @@ function LoadHome() {
     const deleteImage = async (index) => {
         try {
             setIsLoading(true);
-            const response = await fetch('http://magixearch.pythonanywhere.com/delete-image', {
+            const response = await fetch('https://magixearch.pythonanywhere.com/delete-image', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -239,7 +239,7 @@ function LoadHome() {
 
 
         try {
-            const response = await fetch('http://magixearch.pythonanywhere.com/manage-favorites', {
+            const response = await fetch('https://magixearch.pythonanywhere.com/manage-favorites', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -276,7 +276,7 @@ function LoadHome() {
 
         const newDescription = document.getElementById('generated-description').innerText;
 
-        const response = await fetch('http://magixearch.pythonanywhere.com/update-description', {
+        const response = await fetch('https://magixearch.pythonanywhere.com/update-description', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

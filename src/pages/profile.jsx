@@ -35,7 +35,7 @@ function LoadProfile() {
     // DELETE THE USER ACCOUNT
     const deleteAccount = () => {
         setIsLoading(true);
-        fetch('http://magixearch.pythonanywhere.com/delete-account', {
+        fetch('https://magixearch.pythonanywhere.com/delete-account', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
