@@ -19,6 +19,7 @@ function LoadLogin( { onLoginSuccess } ) {
     const [showForgotPassword, setShowForgotPassword] = useState(false);
     const [showVerifyForgotPassword, setShowVerifyForgotPassword] = useState(false)
     const [showChangePassword, setShowChangePassword] = useState(false)
+    const [passwordVisible, setPasswordVisible] = useState(false);
 
     // ADD MOTION TO THE BACKGROUND
     useEffect(() => {
@@ -280,8 +281,19 @@ function LoadLogin( { onLoginSuccess } ) {
                                 <label htmlFor="login-email" className="label">Email</label>
                             </div>
                             <div className="input-wrapper">
-                                <input id="login-password" className="text-input" type="password" required placeholder=""/>
+                                <input 
+                                    id="login-password" 
+                                    className="text-input" 
+                                    type={passwordVisible ? "text" : "password"} 
+                                    required 
+                                    placeholder=""
+                                />
                                 <label htmlFor="login-password" className="label">Password</label>
+                                {!passwordVisible ? (
+                                    <span className="material-symbols-outlined" onClick={() => setPasswordVisible(true)}>visibility_off</span>
+                                ) : (
+                                    <span className="material-symbols-outlined" onClick={() => setPasswordVisible(false)}>visibility</span>
+                                )}
                             </div>
                             <button id="login-button" type="submit">LOGIN</button>
                             <p className="link" onClick={() => setShowForgotPassword(true)}>Forgot password ?</p>
@@ -339,12 +351,22 @@ function LoadLogin( { onLoginSuccess } ) {
                                             <div id="login-title" className="title">MAGI<span>X</span>EARCH</div>
 
                                             <div className="input-wrapper">
-                                                <input id="change-password" className="text-input" type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minLength="8" title="Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one number." placeholder=""/>
+                                                <input id="change-password" className="text-input" type={passwordVisible ? "text" : "password"}  required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minLength="8" title="Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one number." placeholder=""/>
                                                 <label htmlFor="change-password" className="label">Password</label>
+                                                {!passwordVisible ? (
+                                                    <span className="material-symbols-outlined" onClick={() => setPasswordVisible(true)}>visibility_off</span>
+                                                ) : (
+                                                    <span className="material-symbols-outlined" onClick={() => setPasswordVisible(false)}>visibility</span>
+                                                )}
                                             </div>
                                             <div className="input-wrapper">
-                                                <input id="change-confirm-password" className="text-input" type="password" required placeholder=""/>
+                                                <input id="change-confirm-password" className="text-input" type={passwordVisible ? "text" : "password"}  required placeholder=""/>
                                                 <label htmlFor="change-confirm-password" className="label">Confirm password</label>
+                                                {!passwordVisible ? (
+                                                    <span className="material-symbols-outlined" onClick={() => setPasswordVisible(true)}>visibility_off</span>
+                                                ) : (
+                                                    <span className="material-symbols-outlined" onClick={() => setPasswordVisible(false)}>visibility</span>
+                                                )}
                                             </div>
 
                                             <button id="signup-button" type="submit">CHANGE PASSWORD</button>
@@ -368,12 +390,22 @@ function LoadLogin( { onLoginSuccess } ) {
                                 <label htmlFor="signup-email" className="label">Email</label>
                             </div>
                             <div className="input-wrapper">
-                                <input id="signup-password" className="text-input" type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minLength="8" title="Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one number." placeholder=""/>
+                                <input id="signup-password" className="text-input" type={passwordVisible ? "text" : "password"}  required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minLength="8" title="Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one number." placeholder=""/>
                                 <label htmlFor="signup-password" className="label">Password</label>
+                                {!passwordVisible ? (
+                                    <span className="material-symbols-outlined" onClick={() => setPasswordVisible(true)}>visibility_off</span>
+                                ) : (
+                                    <span className="material-symbols-outlined" onClick={() => setPasswordVisible(false)}>visibility</span>
+                                )}
                             </div>
                             <div className="input-wrapper">
-                                <input id="signup-confirm-password" className="text-input" type="password" required placeholder=""/>
+                                <input id="signup-confirm-password" className="text-input" type={passwordVisible ? "text" : "password"}  required placeholder=""/>
                                 <label htmlFor="signup-confirm-password" className="label">Confirm password</label>
+                                {!passwordVisible ? (
+                                    <span className="material-symbols-outlined" onClick={() => setPasswordVisible(true)}>visibility_off</span>
+                                ) : (
+                                    <span className="material-symbols-outlined" onClick={() => setPasswordVisible(false)}>visibility</span>
+                                )}
                             </div>
                             <button id="signup-button" type="submit">JOIN MAGIXEARCH</button>
                         </form>

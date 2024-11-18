@@ -111,6 +111,16 @@
     position: relative;
 }
 
+.input-wrapper span {
+    position: absolute;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    right: 0.5rem;
+    top: 50%;
+    color: #1A1A19;
+    cursor: pointer;
+}
+
 .text-input {
     position: relative;
     padding: 1rem;
