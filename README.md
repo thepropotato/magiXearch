@@ -93,7 +93,7 @@ This section of the website talks about the creators and our primary aim of Magi
 - Python Anywhere (Server hosting)
 - Vercel (Web deployment) <br><br>
 
-# Why "Aira" ?
+# Why "MagiXearch" ?
 
 Magixearch is designed to simplify your life. In brief, it addresses the need for description or content-based image searches when users struggle to find specific images due to excessive scrolling.
 <br>
