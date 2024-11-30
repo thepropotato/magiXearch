@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# What is MagiXearch ? 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**MagiXearch** is an AI powered image storage cloud. Just like google photos, but revolutionary. Google photos allows users to store images by uploading. This application generates descriptions for selected images during the time of upload. We using magixearch, allow the users not only to upload images, but also to check the generated descriptions and edit them if not satisfied. 
 
-## Available Scripts
+Website : The website is now live at <a href=https://magicxearch.vercel.app>https://magicxearch.vercel.app</a><br><br>
 
-In the project directory, you can run:
+# MagiXearch - Website
 
-### `npm start`
+The website is built using ReactJS and CSS. The website is ***not built responsive*** (adapting to screens). So, **viewing from a Laptop/Computer (Landscape mode) is suggested**.
+<br><br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Landing (Login) page
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Login page image](https://github.com/thepropotato/magiXearch/blob/master/readme-images/login.png)
 
-### `npm test`
+The login page allows users (first time users) to signup, and users who have already signed up can simply login.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### <li> Sign Up process :
+1. Choose a username
+2. Enter your mail ID.
+3. Enter password, confirm password.
+4. Click **Sign Up** to get a verification code.
+5. Enter the verification code to complete the signup process.
+6. Login with the credentials to continue.
 
-### `npm run build`
+*Forgot password* option allows you to reset your password.
+<br><br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Home page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Home page image](https://github.com/thepropotato/magiXearch/blob/master/readme-images/hero.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The hero page is just a style statement reverbating the name of the tool and two call to actions.
+<br><br>
 
-### `npm run eject`
+# Images page
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Images page image](https://github.com/thepropotato/magiXearch/blob/master/readme-images/images.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This is where users can 
+1. Find all the uploaded images
+2. Upload a new image (one at a time)
+<br><br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Upload image section
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Upload image section](https://github.com/thepropotato/magiXearch/blob/master/readme-images/image-upload.png)
 
-## Learn More
+Users will be able to see this screen when they upload an image. Here they can edit the description.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Images description image](https://github.com/thepropotato/magiXearch/blob/master/readme-images/image-details.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Once uploaded they can click on the image and see the above screen. This is where they can 
+1. Delete the image
+2. Share an image.
+3. Add/remove an image to favorites.
+4. Save an edited description.
+5. Download an image.
+<br><br>
 
-### Code Splitting
+# Favorites page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Favorites page image](https://github.com/thepropotato/magiXearch/blob/master/readme-images/favorites.png)
 
-### Analyzing the Bundle Size
+List of all favorite images for easy access.
+<br><br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Profile page
 
-### Making a Progressive Web App
+![Profile page image](https://github.com/thepropotato/magiXearch/blob/master/readme-images/profile.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Simple details about the registered Email ID and username.
+<br><br>
 
-### Advanced Configuration
+# About page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![About page image](https://github.com/thepropotato/magiXearch/blob/master/readme-images/about.png)
 
-### Deployment
+This section of the website talks about the creators and our primary aim of MagiXearch. You can always get in touch with us using the creator cards.
+<br><br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# Technologies used
 
-### `npm run build` fails to minify
+- React JS
+- CSS
+- Python
+- Flask
+ <br><br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Clouds used
+
+- Amazon AWS (S3)
+- Python Anywhere (Server hosting)
+- Vercel (Web deployment) <br><br>
+
+# Why "Aira" ?
+
+Magixearch is designed to simplify your life. In brief, it addresses the need for description or content-based image searches when users struggle to find specific images due to excessive scrolling.
+<br>
+
+# Queries and Feedback
+
+For any Queries and feedback please mail me at notvenupulagam@gmail.com
+
+Hope you liked my work. Have a good day. Thanks for visiting magixearch.
+
+*Thank you.*
