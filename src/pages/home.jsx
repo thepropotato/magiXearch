@@ -11,6 +11,8 @@ import LoadProfile from "./profile";
 import { UserDataContext } from "./context";
 import LoadAbout from "./about";
 
+import LazyImage from "../helpers/lazy-loader";
+
 function LoadHome() {
 
     // SETTING THE VARIABLES FROM THE CONTEXT PROVIDER
@@ -299,20 +301,31 @@ function LoadHome() {
 
     const [searchTerm, setSearchTerm] = useState('');
 
-    const searchResults = images.filter(image => {
-        if (searchTerm === '') {
-            return false;
-        } else {
-            return image.description.toLowerCase().includes(searchTerm.toLowerCase());
-        }
-        }).map(image => {
-        const regex = new RegExp(`(${searchTerm})`, 'gi');
-        const highlightedDescription = image.description.replace(regex, (match) => {
+    const searchResults = 
+    images.map(image => {
+        if (searchTerm.trim() === '') return null;
+
+        const words = searchTerm.toLowerCase().split(/\s+/);
+        const description = image.description.toLowerCase();
+        let matchCount = 0;
+
+        words.forEach(word => {
+            if (description.includes(word)) {
+                matchCount++;
+            }
+        });
+
+        if (matchCount === 0) return null;
+
+        const regex = new RegExp(`(${words.join('|')})`, 'gi');
+        const highlightedDescription = image.description.replace(regex, match => {
             return `<span class="highlight">${match}</span>`;
         });
-    
-        return { ...image, highlightedDescription };
-    }); 
+
+        return { ...image, highlightedDescription, matchCount };
+    })
+    .filter(image => image !== null)
+    .sort((a, b) => b.matchCount - a.matchCount);
 
     // SHOW THE DETAILS OF THE CLICKED SEARCH RESULT
     const showDetailedSearchResult = (file_url) => {
@@ -379,11 +392,10 @@ function LoadHome() {
 
                             {images.length !== 0 && images.map((image, index) => (
                                 <div className="image" key={index}>
-                                    <img 
-                                        src={image.file_url}
-                                        alt={image.file_name}
-                                        key={index}
-                                        onClick={() => handleImageClick(index)}
+                                    <LazyImage 
+                                        src={image.file_url} 
+                                        alt={image.file_name} 
+                                        onClick={() => handleImageClick(index)} 
                                     />
                                 </div>
                             ))}
